@@ -1,0 +1,112 @@
+body {
+  /* margin: 0;
+  padding: 0;
+  background-image: url(1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fix; */
+  margin: 0;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery img {
+  width: 100%; /* Mengatur lebar gambar agar responsif */
+  height: auto; /* Mempertahankan rasio aspek gambar */
+  max-width: none; /* Menghapus batasan lebar maksimum */
+  height: auto; /* Mempertahankan rasio aspek gambar */
+  object-fit: cover;
+}
+
+.gallery img:nth-child(3) {
+  margin-top: -42px;
+}
+
+.navbar {
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.nav-item {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link.active {
+  position: relative;
+}
+
+@media (min-width: 991px) {
+  .nav-link.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #b91a00;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link.active:hover::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 350px;
+  margin-top: -680px;
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  text-align: center;
+}
+
+.item {
+  margin-left: -160px;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.wrapper item {
+  min-width: 110px;
+  height: 110px;
+  line-height: 110px;
+}
+
+.mobile {
+  display: none; /* Sembunyikan gambar mobile */
+}
+@media only screen and (max-width: 600px) {
+  .desktop {
+    display: none; /* Sembunyikan gambar desktop */
+  }
+  .mobile {
+    display: block; /* Tampilkan gambar mobile */
+  }
+  .mobile:nth-child(3) {
+    margin-top: -70px;
+  }
+}
